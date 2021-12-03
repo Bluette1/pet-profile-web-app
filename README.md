@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# pet-profile-web-app
+
+This is a pet registration and tracking application for pets where pet owners can sign up and register their pets.
+
+
+## Built with
+- Javascript
+- Javascript design patterns
+- Node.js
+- React.js
+- Redux
+- JSON Web Token (JWT)
+
+## Live Demo link
+- [Deployed site on Heroku](https://pet-profile-app.herokuapp.com/)
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+## Prerequisites
+
+- Install node.
+
+## Set up Locally
+- Git clone this repo.
+- Inside the project's root folder
+
+- Create a `.env.development` file in the root repository of the project and paste the following:
+
+```
+REACT_APP_REQUEST_OPTIONS_HOST=localhost
+
+REACT_APP_REQUEST_OPTIONS_PORT=8080
+
+REACT_APP_REQUEST_OPTIONS_HTTP_PROTOCOL=http
+
+PORT=8081
+
+```
+
+Run the following commands to start the application:
+
+```
+yarn install
+yarn start
+
+```
+
+- Make sure the [backend server](https://github.com/Bluette1/pet-profile-web-api) is running
+
+
+Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
+
+### Login
+The user can login in and create an account. 
+
+ ## Features
+- The user can access the following functions application: 
+  
+  - Display a list of registered pets on home page
+  - A logged in user can add a pet to their list of owned pets
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Heroku Deployment with Docker
+- Instructions can be found [here]( 
+ https://betterprogramming.pub/how-to-containerize-and-deploy-apps-with-docker-and-heroku-b1c49e5bc070).
+- [Container Registry and Runtime(Docker Deploys)](https://devcenter.heroku.com/articles/container-registry-and-runtime)
+- You may have to [disable the eslint plugin](https://stackoverflow.com/questions/67364108/react-app-failed-to-load-config-airbnb-in-deploying-to-heroku)
 
-### `yarn build` fails to minify
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
