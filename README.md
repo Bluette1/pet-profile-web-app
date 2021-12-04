@@ -26,18 +26,7 @@ To get a local copy up and running follow these simple example steps.
 - Git clone this repo.
 - Inside the project's root folder
 
-- Create a `.env.development` file in the root repository of the project and paste the following:
-
-```
-REACT_APP_REQUEST_OPTIONS_HOST=localhost
-
-REACT_APP_REQUEST_OPTIONS_PORT=8080
-
-REACT_APP_REQUEST_OPTIONS_HTTP_PROTOCOL=http
-
-PORT=8081
-
-```
+- Create a `.env.development` file in the root repository of the project according to the `.env.example` file.
 
 Run the following commands to start the application:
 
