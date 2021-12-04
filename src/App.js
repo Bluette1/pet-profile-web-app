@@ -6,6 +6,8 @@ import Register from "./components/Register";
 import Home from "./containers/Home";
 import Profile from "./components/Profile";
 import PetForm from "./components/PetForm";
+import PetFormUpdate from "./components/PetFormUpdate";
+import Pet from "./components/Pet";
 import history from "./helpers/history";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -92,6 +94,8 @@ const App = () => {
             <Route path="/login" component={Login} />
             <Route path="/profile" component={Profile} />
             <Route path="/add" component={PetForm} />
+            <Route path="/edit" component={PetFormUpdate} />
+            <Route path="/pet/" component={Pet} />
           </Switch>
         </div>
       </div>

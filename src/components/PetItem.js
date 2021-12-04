@@ -7,7 +7,6 @@ const PetItem = ({ pet }) => {
   const {
     name, age, sex, missing, weight, color, image
   } = pet;
-  const { user: currentUser } = useSelector((state) => state.auth);
   const handleClick = () => {
     history.push({
       pathname: `/pet/${name.toLowerCase().replace(/ /g, '-')}`,
@@ -29,14 +28,13 @@ const PetItem = ({ pet }) => {
           onClick={handleClick}
           data-testid="action-button"
           type="button"
-          disabled="true"
         >
           View pet
         </button>
         <img src={image} alt="pet" />
       </div>
       <>
-         {missing && <p>Missing</p> }
+         {missing && <p>***Missing Pet***</p> }
         <h4>Name: {name.toUpperCase()}</h4>
         <h4>
          Age: {age}
