@@ -10,16 +10,20 @@ const Home = () => {
   const [errDisplay, setErrDisplay] = useState("");
   const dispatch = useDispatch();
   const pets = useSelector((state) => state.pet);
+  const { user: currentUser } = useSelector((state) => state.auth);
 
   useEffect(async () => {
+    const retrieveData = [PetService.getPets()];
+    if (currentUser) {
+      retrieveData.push(PetService.getOwnPets());
+    }
     try {
-      const [petsResponse, ownPetsResponse] = await Promise.all([
-        PetService.getPets(),
-        PetService.getOwnPets(),
-      ]);
+      const [petsResponse, ownPetsResponse] = await Promise.all(retrieveData);
 
       dispatch(registerPets(petsResponse.data));
-      dispatch(registerOwnPets(ownPetsResponse.data));
+      if (currentUser) {
+        dispatch(registerOwnPets(ownPetsResponse.data));
+      }
     } catch (error) {
       const errorContent =
         (error.response && error.response.data) ||

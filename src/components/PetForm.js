@@ -29,6 +29,7 @@ const PetForm = (props) => {
   const [weight, setWeight] = useState(5);
   const [color, setColor] = useState('');
   const [image, setImage] = useState(null);
+  const [availableForAdoption, setAvailableForAdoption] = useState(false);
   const { message } = useSelector((state) => state.message);
   const [imageSelected, setImageSelected] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -61,6 +62,11 @@ const PetForm = (props) => {
     const sex = e.target.value;
     setSex(sex);
   };
+
+  const onChangeAvailableForAdoption= () => {
+    setAvailableForAdoption((available) => !available);
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 

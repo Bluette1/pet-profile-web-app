@@ -32,6 +32,7 @@ const PetForm = (props) => {
   const [weight, setWeight] = useState(pet.weight);
   const [color, setColor] = useState(pet.color);
   const [image, setImage] = useState(pet.image);
+  const [availableForAdoption, setAvailableForAdoption] = useState(pet.available_for_adoption);
   const { message } = useSelector((state) => state.message);
   const [imageSelected, setImageSelected] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -43,6 +44,10 @@ const PetForm = (props) => {
 
   const onChangeMissing = () => {
     setMissing((missingValue) => !missingValue);
+  };
+
+  const onChangeAvailableForAdoption= () => {
+    setAvailableForAdoption((available) => !available);
   };
 
   const onChangeAge = (e) => {
@@ -155,6 +160,15 @@ const PetForm = (props) => {
             name="color"
             value={color}
             onChange={onChangeColor}
+          />
+        </div>
+
+        <div className="form-group">
+          <p>Available for adoption? {missing ? 'Yes' : 'No'}</p>
+          <Input
+            type="checkbox"
+            checked={availableForAdoption}
+            onChange={onChangeAvailableForAdoption}
           />
         </div>
 

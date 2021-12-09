@@ -11,7 +11,17 @@ const Pet = () => {
   const own_pets = useSelector((state) => state.own_pet);
 
   const { pet } = location.state;
-  const { _id, name, age, sex, missing, weight, color, image } = pet;
+  const {
+    _id,
+    name,
+    age,
+    sex,
+    missing,
+    weight,
+    color,
+    image,
+    available_for_adoption: availableForAdoption,
+  } = pet;
 
   const owner = () => {
     const owned = own_pets.filter((petId) => petId === _id);
@@ -54,7 +64,7 @@ const Pet = () => {
   }
 
   return (
-    <div className="row d-md-flex" data-testid="pett-container">
+    <div className="row d-md-flex" data-testid="pet-container">
       <div className="col-md-6">
         <img src={image} alt="pet" />
       </div>
@@ -88,7 +98,30 @@ const Pet = () => {
               )}
             </div>
           )}
+          {currentUser && !owner() && (
+            <div>
+              {availableForAdoption && <button
+                className="btn-primary mb-2"
+                onClick={handleUpdate}
+                data-testid="action-button"
+                type="button"
+              >
+                Adopt {name}
+              </button>}
+            </div>
+          )}
         </div>
+        {missing && (
+                <button
+                  className="d-block btn-primary mb-2"
+                  onClick={handleMissing}
+                  data-testid="action-button"
+                  type="button"
+                >
+                  {name} is a missing pet. Please contact owner if you know anything
+                  about her whereabouts.
+                </button>
+              )}
         <button
           className="btn-primary mb-2"
           onClick={handleClick}

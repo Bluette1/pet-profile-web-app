@@ -35,8 +35,8 @@ const App = () => {
   return (
     <Router history={history}>
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/tutorials" className="navbar-brand">
+        <nav className="navbar navbar-expand navbar-secondary bg-secondary">
+          <a href="/" className="navbar-brand">
             petProfile
           </a>
           <div className="navbar-nav mr-auto">
