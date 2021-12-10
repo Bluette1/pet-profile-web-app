@@ -22,15 +22,6 @@ const PetItem = ({ pet }) => {
       onClick={handleClick}
     >
       <div>
-        
-        <button
-          className="view btn-primary mb-2"
-          onClick={handleClick}
-          data-testid="action-button"
-          type="button"
-        >
-          View pet
-        </button>
         <img src={image} alt="pet" />
       </div>
       <>
@@ -50,6 +41,14 @@ const PetItem = ({ pet }) => {
           Weight: {weight}
         </h4>
       </>
+      <button
+          className="view btn-primary mb-2 mt-2"
+          onClick={handleClick}
+          data-testid="action-button"
+          type="button"
+        >
+          View more..
+        </button>
     </div>
   );
 };

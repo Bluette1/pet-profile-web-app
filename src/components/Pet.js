@@ -58,6 +58,12 @@ const Pet = () => {
       });
   };
 
+  const handleMissingInfo = (e) => {
+    e.preventDefault();
+
+    alert(`${name} has been notified. You will be contacted shortly`);
+  };
+
   if (errDisplay !== "") {
     console.log(errDisplay);
     return null;
@@ -100,28 +106,42 @@ const Pet = () => {
           )}
           {currentUser && !owner() && (
             <div>
-              {availableForAdoption && <button
-                className="btn-primary mb-2"
-                onClick={handleUpdate}
-                data-testid="action-button"
-                type="button"
-              >
-                Adopt {name}
-              </button>}
-            </div>
-          )}
-        </div>
-        {missing && (
+              {availableForAdoption && (
                 <button
-                  className="d-block btn-primary mb-2"
-                  onClick={handleMissing}
+                  className="btn-primary mb-2"
+                  onClick={handleUpdate}
                   data-testid="action-button"
                   type="button"
                 >
-                  {name} is a missing pet. Please contact owner if you know anything
-                  about her whereabouts.
+                  Adopt {name}
                 </button>
               )}
+            </div>
+          )}
+        </div>
+        {missing && !owner() && (
+          <button
+            className="d-block btn-primary mb-2"
+            onClick={handleMissingInfo}
+            data-testid="action-button"
+            type="button"
+          >
+            {name} is a missing pet. Please contact owner if you know anything
+            about her whereabouts.
+          </button>
+        )}
+
+        {missing && owner() && (
+          <button
+            className="d-block btn-primary mb-2"
+            onClick={handleMissing}
+            data-testid="action-button"
+            type="button"
+          >
+            {name} was reported missing. Please click here to update her status
+            if she's no longer missing.
+          </button>
+        )}
         <button
           className="btn-primary mb-2"
           onClick={handleClick}

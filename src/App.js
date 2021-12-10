@@ -26,10 +26,12 @@ const App = () => {
   }, [dispatch]);
   const logOut = (e) => {
     e.preventDefault();
-    dispatch(logout()).then(
+    dispatch(logout()).then(() => {
       alert(
         "You have successfully logged out. It was happy to have you. Hope to see you again!"
       )
+      window.location.reload();
+    }
     );
   };
   return (
