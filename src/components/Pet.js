@@ -71,10 +71,10 @@ const Pet = () => {
 
   return (
     <div className="row d-md-flex" data-testid="pet-container">
-      <div className="col-md-6">
-        <img src={image} alt="pet" />
+      <div className="col-lg-7">
+        <img className="col-12" src={image} alt="pet" />
       </div>
-      <div className="col-md-6">
+      <div className="col-lg-5">
         <div>
           <h4>{name.toUpperCase()}</h4>
           <h4>Sex: {sex}</h4>
@@ -126,8 +126,8 @@ const Pet = () => {
             data-testid="action-button"
             type="button"
           >
-            {name} is a missing pet. Please contact owner if you know anything
-            about her whereabouts.
+            {name} is a missing pet. Please click here to notify owner if you
+            know anything about her whereabouts.
           </button>
         )}
 

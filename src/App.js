@@ -38,10 +38,11 @@ const App = () => {
     <Router history={history}>
       <div>
         <nav className="navbar navbar-expand navbar-secondary bg-secondary">
-          <a href="/" className="navbar-brand">
-            petProfile
+        <a href="/" className="navbar-brand">
+        &nbsp;petProfile
           </a>
           <div className="navbar-nav mr-auto">
+     
             <li className="nav-item">
               <Link to="/home" className="nav-link">
                 Home
@@ -76,6 +77,17 @@ const App = () => {
               </li>
             )}
 
+{currentUser && (
+              <li className="nav-item">
+                <Link to="/my-pets" className="nav-link">
+                  My pets
+                </Link>
+                {message && (
+                  <span className="alert alert-danger">{message}</span>
+                )}
+              </li>
+            )}
+
             {currentUser && (
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
@@ -94,7 +106,7 @@ const App = () => {
             <Route exact path={["/", "/home"]} component={Home} />
             <Route exact path="/signup" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/my-pets" component={Profile} />
             <Route path="/add" component={PetForm} />
             <Route path="/edit" component={PetFormUpdate} />
             <Route path="/pet/" component={Pet} />

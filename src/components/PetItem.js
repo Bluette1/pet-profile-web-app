@@ -13,18 +13,17 @@ const PetItem = ({ pet }) => {
       state: { pet },
     });
   };
-
   return (
     <div
-      className="col-sm-6 col-md-4"
+      className="row"
       role="presentation"
       onKeyDown={handleClick}
       onClick={handleClick}
     >
-      <div>
-        <img src={image} alt="pet" />
+      <div className='col-lg-7'>
+        <img className='col-12' src={image} alt="pet" />
       </div>
-      <>
+      <div className='col-lg-5'>
          {missing && <p>***Missing Pet***</p> }
         <h4>Name: {name.toUpperCase()}</h4>
         <h4>
@@ -40,8 +39,7 @@ const PetItem = ({ pet }) => {
         <h4>
           Weight: {weight}
         </h4>
-      </>
-      <button
+        <button
           className="view btn-primary mb-2 mt-2"
           onClick={handleClick}
           data-testid="action-button"
@@ -49,6 +47,7 @@ const PetItem = ({ pet }) => {
         >
           View more..
         </button>
+      </div>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
 import AuthService from '../services/auth.service';
 import { loginSuccess, loginFail, setMessage } from '../actions/auth';
+import dogIcon from '../public/images/istockphoto-dog.jpg'
 
 const required = (value) => {
   if (!value) {
@@ -98,7 +99,7 @@ const Login = ({ history }) => {
     <div className="row justify-content-center" data-testid="login-container">
       <div className="col-md-3 card card-container">
         <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          src={dogIcon}
           alt="profile-img"
           className="profile-img-card"
         />
@@ -128,7 +129,7 @@ const Login = ({ history }) => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group mt-3">
             <button
               className="btn btn-primary btn-block"
               disabled={loading}
