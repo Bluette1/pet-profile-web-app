@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className="container row d-flex">
-      <p>Home</p>
+      <p className="h6 my-5">Your neighbourhood pets guide...</p>
       <div className="">
         {pets && pets.length > 0 ? (
           <div className="row d-flex">

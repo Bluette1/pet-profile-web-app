@@ -15,7 +15,7 @@ const PetItem = ({ pet }) => {
   };
   return (
     <div
-      className="row"
+      className="row my-5"
       role="presentation"
       onKeyDown={handleClick}
       onClick={handleClick}
@@ -23,29 +23,29 @@ const PetItem = ({ pet }) => {
       <div className='col-lg-7'>
         <img className='col-12' src={image} alt="pet" />
       </div>
-      <div className='col-lg-5'>
+      <div className='col-lg-5 font-weight-bolder'>
          {missing && <p>***Missing Pet***</p> }
-        <h4>Name: {name.toUpperCase()}</h4>
-        <h4>
-         Age: {age}
-        </h4>
-        <h4>
+        <h6>Name: {name.toUpperCase()}</h6>
+        <h6>
+         Age: {age} years
+        </h6>
+        <h6>
          Sex: {sex}
-        </h4>
-        <h4>
+        </h6>
+        <h6>
           Color: {color}
-        </h4>
+        </h6>
 
-        <h4>
-          Weight: {weight}
-        </h4>
+        <h6>
+          Weight: {weight} kg
+        </h6>
         <button
           className="view btn-primary mb-2 mt-2"
           onClick={handleClick}
           data-testid="action-button"
           type="button"
         >
-          View more..
+          View more...
         </button>
       </div>
     </div>

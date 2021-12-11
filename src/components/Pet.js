@@ -70,17 +70,17 @@ const Pet = () => {
   }
 
   return (
-    <div className="row d-md-flex" data-testid="pet-container">
+    <div className="my-5 row d-md-flex" data-testid="pet-container">
       <div className="col-lg-7">
         <img className="col-12" src={image} alt="pet" />
       </div>
       <div className="col-lg-5">
         <div>
-          <h4>{name.toUpperCase()}</h4>
-          <h4>Sex: {sex}</h4>
-          <h4>Age: {age} years</h4>
-          <h4>Weight: {weight} kg</h4>
-          <h4>Color: {color} color</h4>
+          <h6 className="text-secondary">{name.toUpperCase()}</h6>
+          <h6>Sex: {sex}</h6>
+          <h6>Age: {age} years</h6>
+          <h6>Weight: {weight} kg</h6>
+          <h6>Color: {color}</h6>
           {currentUser && owner() && (
             <div>
               <button

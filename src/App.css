@@ -1,10 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  border: 0 none;
+  list-style: none outside none;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .nav-link {
   color: #f0f8ff;
   text-decoration: none;
 }
 
-.navbar-brand {
-  color: #000000;
+.nav-link:visited {
+  color: #f0f8ff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #f0f8ff;
+}
+
+.navbar-brand,
+.navbar-brand:visited {
+  color: #f0f8ff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+.navbar-brand:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #ffc0cb;
+  border-color: #ffc0cb;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus {
+  background-color: #ffc0cb;
+  border-color: #ffc0cb;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
   font-weight: bolder;
 }
