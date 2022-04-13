@@ -11,20 +11,20 @@ class PetService {
     return http.get("/pets", { headers });
   }
 
-  getOwnPets() {
-    return http.get(`/user/pets`, { headers });
+  getOwnPets(id) {
+    return http.get(`/users/${id}/pets`, { headers });
   }
 
   getPet(id) {
-    return http.post(`/pet/${id}`, { headers });
+    return http.post(`/pets/${id}`, { headers });
   }
 
   updatePet(id, data) {
-    return http.put(`/pet/${id}`, data, { headers });
+    return http.put(`/pets/${id}`, data, { headers });
   }
 
   reportMissing(id) {
-    return http.put(`/pet/${id}`, { missing: true }, { headers });
+    return http.put(`/pets/${id}`, { missing: true }, { headers });
   }
 }
 
