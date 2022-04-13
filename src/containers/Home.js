@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(async () => {
     const retrieveData = [PetService.getPets()];
     if (currentUser) {
-      retrieveData.push(PetService.getOwnPets());
+      retrieveData.push(PetService.getOwnPets(currentUser.id));
     }
     try {
       const [petsResponse, ownPetsResponse] = await Promise.all(retrieveData);
